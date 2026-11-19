@@ -1,0 +1,11 @@
+project: savantenvs/glslang
+target: fuzz_resource_limits
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_resource_limits/testsuite
+
+cmds:
+  - cmd: /mayhem/out/fuzz_resource_limits
+    libfuzzer: true
+    timeout: 10

@@ -1,0 +1,11 @@
+project: savantenvs/glslang
+target: fuzz_hlsl
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_hlsl/testsuite
+
+cmds:
+  - cmd: /mayhem/out/fuzz_hlsl
+    libfuzzer: true
+    timeout: 10

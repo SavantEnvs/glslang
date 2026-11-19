@@ -1,0 +1,6 @@
+# Per-Dockerfile ignore for `docker build -f mayhem/Dockerfile .` (keeps .git: the grader uses history).
+build/
+out/
+*.o
+*.a
+*.so

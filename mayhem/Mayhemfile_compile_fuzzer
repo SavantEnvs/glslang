@@ -1,0 +1,11 @@
+project: savantenvs/glslang
+target: compile_fuzzer
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/compile_fuzzer/testsuite
+
+cmds:
+  - cmd: /mayhem/out/compile_fuzzer
+    libfuzzer: true
+    timeout: 10

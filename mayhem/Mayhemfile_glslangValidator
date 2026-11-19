@@ -1,0 +1,14 @@
+project: savantenvs/glslang
+target: glslangvalidator
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/glslangvalidator/testsuite
+
+# Raw CLI target in the known-green raw shape: a bare @@, no filepath:/cwd:. The stage is given
+# with -S vert (the CLI otherwise derives it from the file extension). -V: compile to SPIR-V;
+# --aml/--amb auto-map locations/bindings so plain GLSL reaches the SPIR-V back end; the module
+# goes to /dev/null.
+cmds:
+  - cmd: /mayhem/out/glslang -S vert -V --aml --amb -o /dev/null @@
+    timeout: 10
